@@ -82,30 +82,264 @@ class _RemoteControllerState extends State<RemoteController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
-                        concave("Beat"),concave("Synth"),concave("Synth")
+                        GestureDetector(
+                          onTap: (){
+                            if(this.isPressed==true){
+                              setState(() {
+                                isPressed=false;
+                              });
+                            }
+                             if(this.isPressed==false){
+                              setState(() {
+                                isPressed=true;
+                              });
+                             }
+                          },
+                          child: AnimatedContainer(
+                            width: MediaQuery.of(context).size.width /4,
+                            height: MediaQuery.of(context).size.height / 8,
+                              duration: Duration(seconds: 2),
+                            child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            if(this.isPressed==true){
+                              setState(() {
+                                isPressed=false;
+                              });
+                            }
+                            if(this.isPressed==false){
+                              setState(() {
+                                isPressed=true;
+                              });
+                            }
+                          },
+                          child: AnimatedContainer(
+                            width: MediaQuery.of(context).size.width /4,
+                            height: MediaQuery.of(context).size.height / 8,
+                            duration: Duration(seconds: 2),
+                            child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            if(this.isPressed==true){
+                              setState(() {
+                                isPressed=false;
+                              });
+                            }
+                            if(this.isPressed==false){
+                              setState(() {
+                                isPressed=true;
+                              });
+                            }
+                          },
+                          child: AnimatedContainer(
+                            width: MediaQuery.of(context).size.width /4,
+                            height: MediaQuery.of(context).size.height / 8,
+                            duration: Duration(seconds: 2),
+                            child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                          ),
+                        ),
                       ],
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height/18,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      concave("Beat"),convex("Synth",Color(0xFF649166)),concave("Beat")
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height/18,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      concave("Beat"),concave("Bass"),convex("Fx",Color(0xFFA9D5AB)),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height/18,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      convex("Beat",Color(0xff649166)),
-                      convex("Beat",Color(0xFF649166)),
-                      concave("Beat")
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          if(this.isPressed==true){
+                            setState(() {
+                              isPressed=false;
+                            });
+                          }
+                          if(this.isPressed==false){
+                            setState(() {
+                              isPressed=true;
+                            });
+                          }
+                        },
+                        child: AnimatedContainer(
+                          width: MediaQuery.of(context).size.width /4,
+                          height: MediaQuery.of(context).size.height / 8,
+                          duration: Duration(seconds: 2),
+                          child:isPressed ?convex("Synth",Color(0xFF649166)):concave("Beat"),
+                        ),
+                      ),
 
                     ],
                   ),
