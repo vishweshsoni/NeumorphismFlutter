@@ -13,7 +13,7 @@ class _RemoteControllerState extends State<RemoteController> {
 
   static List<Color> _fill = <Color>[
 
-    Colors.grey[300],
+    Colors.grey[200],
     Color(0xFFf8fbf8),
     Colors.white
     ];
@@ -84,16 +84,7 @@ class _RemoteControllerState extends State<RemoteController> {
                       children: <Widget>[
                         GestureDetector(
                           onTap: (){
-                            if(this.isPressed==true){
-                              setState(() {
-                                isPressed=false;
-                              });
-                            }
-                             if(this.isPressed==false){
-                              setState(() {
-                                isPressed=true;
-                              });
-                             }
+                            _change();
                           },
                           child: AnimatedContainer(
                             width: MediaQuery.of(context).size.width /4,
@@ -402,67 +393,18 @@ class _RemoteControllerState extends State<RemoteController> {
         );
   }
 
-  Widget button3(String txt){
-      return Stack(
-          children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width /3,
-                height: MediaQuery.of(context).size.height / 6,
-                decoration: BoxDecoration(
+  void _change() {
 
-                    color: Color(0xFFf8fbf8),
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    boxShadow: [
+      if(this.isPressed==true){
+        setState(() {
+          isPressed=false;
+        });
+      }
+      else if(this.isPressed==false){
+        setState(() {
+          isPressed=true;
+        });
 
-                      BoxShadow(
-                          color: Colors.grey[200],
-
-                          blurRadius: 10.0,
-                          )
-                    ]
-                ),
-              ),
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width /6,
-                  height: MediaQuery.of(context).size.height / 10,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFf8fbf8),
-
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end:Alignment.bottomRight,
-                          colors: _fill,
-                          stops: [0.2,0.5,1],
-
-                      ),
-                    boxShadow: [
-                       BoxShadow(
-                           color: Colors.grey[200],
-                           offset: Offset(-10.0,-10.0),
-                           blurRadius: 15.0,
-                           spreadRadius: 0.1),
-                      BoxShadow(
-                          color: Colors.white,
-                          offset: Offset(20.0,20.0),
-                          blurRadius: 15.0,
-                          spreadRadius: 0.1),
-
-
-                    ]
-
-
-
-
-
-                  ),
-                ),
-              ),
-            )
-          ],
-      );
   }
+}
 }
