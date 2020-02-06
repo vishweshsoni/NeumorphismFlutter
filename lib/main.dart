@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:HeartScreen(),
+      home:RemoteController(),
     );
   }
 }
