@@ -23,21 +23,22 @@ class _HeartScreenState extends State<HeartScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-
               GestureDetector(
                 onTap: () {
                   _change();
                 },
                 child: AnimatedContainer(
-                  width: MediaQuery.of(context).size.width/4  ,
-                  height: MediaQuery.of(context).size.height/8,
+                  width: MediaQuery.of(context).size.width / 4,
+                  height: MediaQuery.of(context).size.height / 8,
                   duration: Duration(seconds: 2),
                   child: isPressed
-                      ? convex("Synth", Color(0xFF649166))
-                      : concave("Beat"),
+                      ? concav("Synth", Color(0xFF649166))
+                      : convex("Beat"),
                 ),
               ),
-              SizedBox(width: 30.0,),
+              SizedBox(
+                width: 30.0,
+              ),
               GestureDetector(
                 onTap: () {
                   _change();
@@ -70,14 +71,11 @@ class _HeartScreenState extends State<HeartScreen> {
     }
   }
 
-  Widget concave(String txt) {
+  Widget convex(String txt) {
     return Container(
       width: MediaQuery.of(context).size.width / 4,
       height: MediaQuery.of(context).size.height / 8,
-      child: Center(
-          child:Icon(
-              Icons.favorite_border
-          )),
+      child: Center(child: Icon(Icons.favorite_border)),
       decoration: BoxDecoration(
           color: Color(0xFFf8fbf8),
           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -96,18 +94,19 @@ class _HeartScreenState extends State<HeartScreen> {
     );
   }
 
-  Widget convex(String txt, Color _clr) {
+  Widget concav(String txt, Color _clr) {
     return Container(
       width: MediaQuery.of(context).size.width / 4,
       height: MediaQuery.of(context).size.height / 8,
       child: Center(
-          child: Icon(
-              Icons.favorite,
-              color: Colors.red,
-          ),),
+        child: Icon(
+          Icons.favorite,
+          color: Colors.red,
+        ),
+      ),
       decoration: BoxDecoration(
         color: _clr,
-          //  border: Border.fromBorderSide(BorderSide(style: BorderStyle.solid,width: 3.0,color: Color(0xFFF8F1F1))),
+        //  border: Border.fromBorderSide(BorderSide(style: BorderStyle.solid,width: 3.0,color: Color(0xFFF8F1F1))),
         borderRadius: BorderRadius.all(Radius.circular(30)),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -118,14 +117,12 @@ class _HeartScreenState extends State<HeartScreen> {
       ),
     );
   }
+
   Widget concaveWithThumb(String txt) {
     return Container(
       width: MediaQuery.of(context).size.width / 4,
       height: MediaQuery.of(context).size.height / 8,
-      child: Center(
-          child:Icon(
-              Icons.thumb_up
-          )),
+      child: Center(child: Icon(Icons.thumb_up)),
       decoration: BoxDecoration(
           color: Color(0xFFf8fbf8),
           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -152,7 +149,8 @@ class _HeartScreenState extends State<HeartScreen> {
         child: Icon(
           Icons.thumb_up,
           color: Colors.blueAccent,
-        ),),
+        ),
+      ),
       decoration: BoxDecoration(
         color: _clr,
         //  border: Border.fromBorderSide(BorderSide(style: BorderStyle.solid,width: 3.0,color: Color(0xFFF8F1F1))),
