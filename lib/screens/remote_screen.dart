@@ -72,45 +72,46 @@ class _RemoteControllerState extends State<RemoteController> {
                               });
                             }
                           },
-                          child: Container(
-                            margin: EdgeInsets.only(top: 10.0),
-                            height: MediaQuery.of(context).size.height / 5,
-                            width: MediaQuery.of(context).size.width / 6,
-                            decoration: powerButton
-                                ? BoxDecoration(
-                                    color: Colors.pinkAccent,
-//            border: Border.fromBorderSide(BorderSide(style: BorderStyle.solid,width: 3.0,color: Color(0xFFF4F2F2))),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(30)),
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: _fill,
-                                      stops: [0.1, 0.5, 0.9],
-                                    ),
-                                  )
-                                : BoxDecoration(
-                                    color: Color(0xFFf8fbf8),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(
-                                      40.0,
-                                    )),
-                                    boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.grey[200],
-                                            offset: Offset(15.0, 15.0),
-                                            blurRadius: 10.0,
-                                            spreadRadius: 1.0),
-                                        BoxShadow(
-                                            color: Colors.white,
-                                            offset: Offset(-10.0, -10.0),
-                                            blurRadius: 15.0,
-                                            spreadRadius: 1.0)
-                                      ]),
-                            child: Icon(Icons.power_settings_new,
-                                color: powerButton
-                                    ? Colors.tealAccent.withOpacity(0.4)
-                                    : Colors.redAccent.withOpacity(0.6)),
+                          child: AnimatedContainer(
+                              duration: Duration(seconds: 2),
+                            child: Container(
+                              margin: EdgeInsets.only(top: 10.0),
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width / 6,
+                              decoration: powerButton
+                                  ? BoxDecoration(
+                                color: Colors.pink.withOpacity(0.7),
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(30)),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: _fill,
+                                  stops: [0.1, 0.5, 0.9],
+                                ),
+                              )
+                                  : BoxDecoration(
+                                color: Color(0xFFf8fbf8),
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(30)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey[200],
+                                      offset: Offset(10.0, 10.0),
+                                      blurRadius: 10.0,
+                                      spreadRadius: -0.1),
+                                  BoxShadow(
+                                      color: Colors.white,
+                                      offset: Offset(-10.0, -10.0),
+                                      blurRadius: 10.0,
+                                      spreadRadius: -8.0)
+                                ],
+                              ),
+                              child: Icon(Icons.power_settings_new,
+                                  color: powerButton
+                                      ? Colors.tealAccent.withOpacity(0.4)
+                                      : Colors.redAccent.withOpacity(0.6)),
+                            ),
                           ),
                         ),
                       ],
@@ -151,7 +152,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed1 ?Colors.deepPurpleAccent.withOpacity(0.3):Colors.black12,
+                                        color: isPressed1
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.3)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -173,17 +177,18 @@ class _RemoteControllerState extends State<RemoteController> {
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(30)),
                                           boxShadow: [
-                                              BoxShadow(
-                                                  color: Colors.grey[200],
-                                                  offset: Offset(10.0, 10.0),
-                                                  blurRadius: 10.0,
-                                                  spreadRadius: 2.0),
-                                              BoxShadow(
-                                                  color: Colors.white,
-                                                  offset: Offset(-10.0, -10.0),
-                                                  blurRadius: 10.0,
-                                                  spreadRadius: 2.0)
-                                            ]),
+                                            BoxShadow(
+                                                color: Colors.grey[200],
+                                                offset: Offset(10.0, 10.0),
+                                                blurRadius: 10.0,
+                                                spreadRadius: 2.0),
+                                            BoxShadow(
+                                                color: Colors.white,
+                                                offset: Offset(-10.0, -10.0),
+                                                blurRadius: 10.0,
+                                                spreadRadius: 2.0)
+                                          ],
+                                        ),
                                 )),
                           ),
                           GestureDetector(
@@ -193,9 +198,11 @@ class _RemoteControllerState extends State<RemoteController> {
                                   isPressed2 = false;
                                 });
                               } else if (this.isPressed2 == false) {
-                                setState(() {
-                                  isPressed2 = true;
-                                });
+                                setState(
+                                  () {
+                                    isPressed2 = true;
+                                  },
+                                );
                               }
                             },
                             child: AnimatedContainer(
@@ -210,7 +217,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Synth",
                                     style: TextStyle(
-                                        color: isPressed2?Colors.purpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed2
+                                            ? Colors.purpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -269,7 +279,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed3 ?Colors.deepPurpleAccent.withOpacity(0.3):Colors.black12,
+                                        color: isPressed3
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.3)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -336,7 +349,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed4 ?Colors.deepPurpleAccent.withOpacity(0.3):Colors.black12,
+                                        color: isPressed4
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.3)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -395,7 +411,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed5?Colors.purpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed5
+                                            ? Colors.purpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -454,7 +473,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed6?Colors.deepPurpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed6
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -521,7 +543,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Synth",
                                     style: TextStyle(
-                                        color: isPressed7?Colors.purpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed7
+                                            ? Colors.purpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -580,7 +605,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed8?Colors.deepPurpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed8
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -639,7 +667,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Rx",
                                     style: TextStyle(
-                                        color: isPressed9?Colors.amberAccent.withOpacity(0.4):Colors.black12,
+                                        color: isPressed9
+                                            ? Colors.amberAccent
+                                                .withOpacity(0.4)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -706,7 +737,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed10?Colors.purpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed10
+                                            ? Colors.purpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -765,7 +799,10 @@ class _RemoteControllerState extends State<RemoteController> {
                                       child: Text(
                                     "Beat",
                                     style: TextStyle(
-                                        color: isPressed11?Colors.deepPurpleAccent.withOpacity(0.2):Colors.black12,
+                                        color: isPressed11
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w500),
                                   )),
@@ -806,7 +843,7 @@ class _RemoteControllerState extends State<RemoteController> {
                                 setState(() {
                                   isPressed12 = false;
                                 });
-                              } else if (this.isPressed12== false) {
+                              } else if (this.isPressed12 == false) {
                                 setState(() {
                                   isPressed12 = true;
                                 });
@@ -819,44 +856,47 @@ class _RemoteControllerState extends State<RemoteController> {
                                 child: Container(
                                   width: MediaQuery.of(context).size.width / 4,
                                   height:
-                                  MediaQuery.of(context).size.height / 8,
+                                      MediaQuery.of(context).size.height / 8,
                                   child: Center(
                                       child: Text(
-                                        "Beat",
-                                        style: TextStyle(
-                                            color: isPressed11?Colors.deepPurpleAccent.withOpacity(0.2):Colors.black12,
-                                            fontSize: 15.0,
-                                            fontWeight: FontWeight.w500),
-                                      )),
+                                    "Beat",
+                                    style: TextStyle(
+                                        color: isPressed11
+                                            ? Colors.deepPurpleAccent
+                                                .withOpacity(0.2)
+                                            : Colors.black12,
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w500),
+                                  )),
                                   decoration: isPressed11
                                       ? BoxDecoration(
-                                    color: Colors.pinkAccent,
+                                          color: Colors.pinkAccent,
 //            border: Border.fromBorderSide(BorderSide(style: BorderStyle.solid,width: 3.0,color: Color(0xFFF4F2F2))),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(30)),
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                      colors: _fill,
-                                      stops: [0.1, 0.5, 0.9],
-                                    ),
-                                  )
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30)),
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                            colors: _fill,
+                                            stops: [0.1, 0.5, 0.9],
+                                          ),
+                                        )
                                       : BoxDecoration(
-                                      color: Color(0xFFf8fbf8),
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(30)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.grey[200],
-                                            offset: Offset(10.0, 10.0),
-                                            blurRadius: 10.0,
-                                            spreadRadius: 2.0),
-                                        BoxShadow(
-                                            color: Colors.white,
-                                            offset: Offset(-10.0, -10.0),
-                                            blurRadius: 10.0,
-                                            spreadRadius: 2.0)
-                                      ]),
+                                          color: Color(0xFFf8fbf8),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(30)),
+                                          boxShadow: [
+                                              BoxShadow(
+                                                  color: Colors.grey[200],
+                                                  offset: Offset(10.0, 10.0),
+                                                  blurRadius: 10.0,
+                                                  spreadRadius: 2.0),
+                                              BoxShadow(
+                                                  color: Colors.white,
+                                                  offset: Offset(-10.0, -10.0),
+                                                  blurRadius: 10.0,
+                                                  spreadRadius: 2.0)
+                                            ]),
                                 )),
                           ),
                         ],

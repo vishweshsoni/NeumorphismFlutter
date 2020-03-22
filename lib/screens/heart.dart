@@ -28,8 +28,8 @@ class _HeartScreenState extends State<HeartScreen> {
                   _change();
                 },
                 child: AnimatedContainer(
-                  width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 8,
+                  width: MediaQuery.of(context).size.width / 18,
+                  height: MediaQuery.of(context).size.height / 9,
                   duration: Duration(seconds: 2),
                   child: isPressed
                       ? concav("Synth", Color(0xFF649166))
